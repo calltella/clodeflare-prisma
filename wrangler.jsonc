@@ -9,16 +9,24 @@
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
 	"name": "vercel-apline",
-	"main": ".open-next/worker.js",
-	"compatibility_date": "2025-12-01",
+	"main": "src/worker.ts",
+	"compatibility_date": "2024-01-01",
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "vercel-apline",
+			"database_id": "57d148ba-6608-4654-9d67-6aec62769c6f",
+			"remote": true
+		}
+	],
 	"compatibility_flags": [
 		"nodejs_compat",
 		"global_fetch_strictly_public"
 	],
-	"assets": {
-		"binding": "ASSETS",
-		"directory": ".open-next/assets"
-	},
+	// "assets": {
+	// 	"binding": "ASSETS",
+	// 	"directory": ".open-next/assets"
+	// },
 	"images": {
 		// Enable image optimization
 		// see https://opennext.js.org/cloudflare/howtos/image

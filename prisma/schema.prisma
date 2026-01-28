@@ -4,6 +4,7 @@
 generator client {
   provider = "prisma-client-js"
   output   = "../src/generated/prisma"
+  runtime  = "cloudflare"
 }
 
 datasource db {
@@ -72,7 +73,7 @@ model VerificationToken {
   @@unique([identifier, token])
 }
 
-model Notes {
+model Note {
   id        String   @id @default(uuid())
   title     String
   content   String
