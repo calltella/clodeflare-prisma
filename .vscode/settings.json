@@ -1,5 +1,51 @@
 {
+	// エディタ基本設定
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.formatOnSave": true,
+	"editor.minimap.enabled": false,
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": "explicit",
+		"source.organizeImports": "explicit"
+	},
+	"editor.tabSize": 2,
+	"editor.insertSpaces": true,
+	"editor.detectIndentation": false,
 	"files.associations": {
 		"wrangler.json": "jsonc"
-	}
+	},
+	// ファイル除外設定
+	"files.exclude": {
+		"**/.git": true,
+		"**/.next": true,
+		"**/node_modules": true,
+		"**/.DS_Store": true
+	},
+	// 検索除外設定
+	"search.exclude": {
+		"**/node_modules": true,
+		"**/.next": true,
+		"**/dist": true,
+		"**/.turbo": true,
+		"**/build": true
+	},
+	// 言語別設定
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[typescriptreact]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[javascriptreact]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[json]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[prisma]": {
+		"editor.defaultFormatter": "prisma.prisma",
+		"editor.formatOnSave": true
+	},
 }

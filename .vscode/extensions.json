@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "ms-ceintl.vscode-language-pack-ja",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "bradlc.vscode-tailwindcss",
+    "prisma.prisma",
+    "ms-vscode.vscode-typescript-next"
+  ],
+    // （任意）非推奨にしたい拡張機能を列挙できます
+  "unwantedRecommendations": ["github.copilot"]
+}
