@@ -1,28 +1,29 @@
-import { handleUsers } from "../routes/users";
+// /app/src/worker.ts
 
+import { Hono } from "hono";
+import { cors } from "hono/cors";
+import { logger } from "hono/logger";
 import type { Env } from "../types/env";
 
-import { Hono } from 'hono'
-import { cors } from 'hono/cors'
-import { logger } from 'hono/logger'
+import { handleNotes } from "../routes/notes";
 
-const app = new Hono<{ Bindings: Env }>()
+const app = new Hono<{ Bindings: Env }>();
 
 // ミドルウェア
-app.use('*', logger())
-app.use('*', cors())
+app.use("*", logger());
+app.use("*", cors());
 
 // ルートエンドポイント
-app.get('/', (c) => {
-  return c.json({ 
-    message: 'Hono + Prisma + D1 API',
+app.get("/", (c) => {
+  return c.json({
+    message: "Hono + Prisma + D1 API",
     endpoints: {
-      notes: '/notes',
-      posts: '/posts'
-    }
-  })
-})
+      notes: "/notes",
+      posts: "/posts",
+    },
+  });
+});
 
-app.route("/notes", handleUsers);
+app.route("/notes", handleNotes);
 
 export default app;

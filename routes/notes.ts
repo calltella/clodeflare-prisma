@@ -1,15 +1,17 @@
 import { Hono } from "hono";
 import { createPrisma } from "../lib/prisma";
+import type { Env } from "../types/env";
 
-export const notes = new Hono();
+export const handleNotes = new Hono<{ Bindings: Env }>();
 
-notes.get("/", async c => {
+handleNotes.get("/", async (c) => {
+  console.log("Fetching notes...");
   const prisma = createPrisma(c.env.DB);
   const notes = await prisma.note.findMany();
   return c.json(notes);
 });
 
-notes.post("/", async c => {
+handleNotes.post("/", async (c) => {
   const prisma = createPrisma(c.env.DB);
   const body = await c.req.json();
   const note = await prisma.note.create({ data: body });
