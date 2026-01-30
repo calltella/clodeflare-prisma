@@ -1,5 +1,5 @@
-import { PrismaClient } from "../src/generated/prisma/client";
 import { PrismaD1 } from "@prisma/adapter-d1";
+import { PrismaClient } from "@prisma/client";
 
 export function createPrisma(db: D1Database) {
   return new PrismaClient({
