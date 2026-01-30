@@ -19,6 +19,8 @@ jobs:
       - name: Install dependencies
         run: npm ci --include=dev
 
+      - run: ls node_modules/.bin | grep opennext || true
+
       - name: Build & Deploy (OpenNext)
         run: npm run deploy
         env:
