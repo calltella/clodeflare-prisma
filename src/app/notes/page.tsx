@@ -1,6 +1,7 @@
 import { utcFormatDateTimeWithDay } from "@/lib/utils/date";
 import { createNote, getNotes } from "./actions";
-
+export const runtime = "nodejs"; // 初回接続でVercelが落ちる
+export const dynamic = "force-dynamic"; // 動的ページには必要(vercel)
 export default async function NotesPage() {
   const notes = await getNotes();
 
