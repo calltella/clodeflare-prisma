@@ -8,7 +8,7 @@ type Note = {
 };
 
 export default async function NotesPage() {
-  const res = await apiFetch("/notes");
+  const res = await apiFetch("/api/notes");
 
   const notes: Note[] = await res.json();
 
