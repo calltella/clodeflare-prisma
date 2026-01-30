@@ -1,6 +1,4 @@
 "use server";
-export const dynamic = "force-dynamic";
-
 import { apiFetch } from "@/lib/api";
 import { revalidatePath } from "next/cache";
 
